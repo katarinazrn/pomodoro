@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <title>Pomodoro</title>
+  </head>
+  <body>
+    <form class="config">
+      <div class="form-group">
+        <label for="sessions-num">Number of sessions</label>
+        <div class="input">
+          <input
+            type="number"
+            id="sessions-num"
+            step="1"
+            min="1"
+            max="99"
+            class="form-control"
+            value="04"
+          />
+          <span class="material-icons edit"> tune </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="sessions-num">Session duration</label>
+        <div class="input">
+          <input
+            type="number"
+            id="sessions-duration"
+            step="1"
+            min="1"
+            max="99"
+            value="25"
+            class="form-control"
+          />
+          <span class="material-icons edit"> tune </span>
+        </div>
+        <span class="min">minutes</span>
+      </div>
+      <div class="form-group">
+        <label for="sessions-num">Break duration</label>
+        <div class="input">
+          <input
+            type="number"
+            id="break-duration"
+            step="1"
+            min="1"
+            max="99"
+            value="05"
+            class="form-control"
+          />
+          <span class="material-icons edit"> tune </span>
+        </div>
+        <span class="min">minutes</span>
+      </div>
+    </form>
+    <button id="start">Start</button>
+    <div class="current">
+      <div id="status">5/8</div>
+      <div id="timer">12:54</div>
+      <small id="type">Pomodoro</small>
+      <div>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+  </body>
+  <script src="./main.js"></script>
+</html>

@@ -1,0 +1,136 @@
+$bg: rgb(197, 81, 68);
+$text-light: rgb(250, 244, 244);
+$dark-red: rgb(116, 5, 5);
+$accent1: rgb(38, 168, 243);
+$accent2: rgb(255, 182, 45);
+
+body {
+  margin: 0;
+  background-color: $bg;
+  overflow-x: hidden;
+
+  * {
+    color: $text-light;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+
+  .config {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin: 5px;
+      padding: 20px;
+      border-radius: 10px;
+
+      background-color: darken($bg, 5%);
+
+      .min {
+        text-align: center;
+      }
+
+      .input {
+        width: 50px;
+        margin: 0 auto;
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input {
+          -moz-appearance: textfield;
+          outline: none;
+          border: none;
+          background-color: transparent;
+          padding-top: 7px;
+          font-size: 36px;
+        }
+
+        position: relative;
+
+        &:hover {
+          .edit {
+            display: block;
+          }
+        }
+        .edit {
+          display: none;
+          top: 0;
+          right: 0;
+          position: absolute;
+          font-size: 20px;
+          color: darken($text-light, 19%);
+        }
+      }
+    }
+  }
+
+  #start {
+    cursor: pointer;
+    margin: 20px auto;
+    background-color: transparent;
+    font-size: 40px;
+    padding: 20px 40px;
+    border: none;
+    display: block;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .current {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+
+    #status {
+      font-size: 50px;
+    }
+
+    #timer {
+        box-sizing: border-box;
+      font-size: 80px;
+      padding: 30px;
+      border: 6px solid $text-light;
+      border-radius: 70px;
+      margin: 10px;
+      background-color: darken($bg, 5%);
+    }
+
+    button {
+      padding: 5px 10px;
+      font-weight: bold;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      margin-top: 10px;
+      border-radius: 5px;
+
+      &:hover{
+          filter: brightness(1.4);
+      }
+
+      &#pause {
+        background-color: $accent1;
+        color: darken($accent1, 40%);
+      }
+      &#reset {
+        background-color: $accent2;
+        color: darken($accent2, 40%);
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  background-color: #c55144;
+  overflow-x: hidden;
+}
+
+body * {
+  color: #faf4f4;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+body .config {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+body .config .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #b74539;
+}
+
+body .config .form-group .min {
+  text-align: center;
+}
+
+body .config .form-group .input {
+  width: 50px;
+  margin: 0 auto;
+  position: relative;
+}
+
+body .config .form-group .input input::-webkit-outer-spin-button,
+body .config .form-group .input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body .config .form-group .input input {
+  -moz-appearance: textfield;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding-top: 7px;
+  font-size: 36px;
+}
+
+body .config .form-group .input:hover .edit {
+  display: block;
+}
+
+body .config .form-group .input .edit {
+  display: none;
+  top: 0;
+  right: 0;
+  position: absolute;
+  font-size: 20px;
+  color: #dcb1b1;
+}
+
+body #start {
+  cursor: pointer;
+  margin: 20px auto;
+  background-color: transparent;
+  font-size: 40px;
+  padding: 20px 40px;
+  border: none;
+  display: block;
+}
+
+body #start:hover {
+  opacity: 0.6;
+}
+
+body .current {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+body .current #status {
+  font-size: 50px;
+}
+
+body .current #timer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 80px;
+  padding: 30px;
+  border: 6px solid #faf4f4;
+  border-radius: 70px;
+  margin: 10px;
+  background-color: #b74539;
+}
+
+body .current button {
+  padding: 5px 10px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+body .current button:hover {
+  -webkit-filter: brightness(1.4);
+          filter: brightness(1.4);
+}
+
+body .current button#pause {
+  background-color: #26a8f3;
+  color: #043049;
+}
+
+body .current button#reset {
+  background-color: #ffb62d;
+  color: #603f00;
+}
+/*# sourceMappingURL=style.css.map */
