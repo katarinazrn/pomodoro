@@ -70,7 +70,6 @@ body .config .form-group label {
 
 @media (max-width: 600px) {
   body .config .form-group label {
-    font-size: 14px;
     width: 40px;
     margin: 0 auto;
   }
@@ -82,7 +81,7 @@ body .config .form-group .min {
 
 @media (max-width: 600px) {
   body .config .form-group .min {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
 
