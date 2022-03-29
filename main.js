@@ -114,7 +114,7 @@ function getInterval() {
     }
 
     displayTimer();
-  }, 10);
+  }, 1000);
 }
 
 
