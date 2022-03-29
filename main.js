@@ -29,6 +29,11 @@ let current_status = null;
 start_button.addEventListener("click", () => {
   init();
   timer = getInterval();
+  
+  setTimeout(() => {
+    start_button.style.display='none';
+  }, 800);
+  
 });
 
 pause_button.addEventListener("click", () => {

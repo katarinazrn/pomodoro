@@ -182,6 +182,7 @@ body .main #start span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: auto 0;
 }
 
 body .main #start:hover {
