@@ -13,9 +13,17 @@
     <title>Pomodoro</title>
   </head>
   <body>
-    <form class="config">
+    <a
+      target="blank"
+      href="https://sr.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BC%D0%BE%D0%B4%D0%BE%D1%80%D0%BE_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0"
+      class="material-icons"
+      id="info"
+    >
+      info
+    </a>
+    <div class="config">
       <div class="form-group">
-        <label for="sessions-num">Number of sessions</label>
+        <label for="sessions-num">Broj intervala</label>
         <div class="input">
           <input
             type="number"
@@ -24,13 +32,14 @@
             min="1"
             max="99"
             class="form-control"
-            value="04"
+            value="4"
           />
-          <span class="material-icons edit"> tune </span>
+          <span class="edit">izmeni</span>
         </div>
+        <span class="min">intervala</span>
       </div>
       <div class="form-group">
-        <label for="sessions-num">Session duration</label>
+        <label for="sessions-num">Dužina intervala</label>
         <div class="input">
           <input
             type="number"
@@ -41,12 +50,12 @@
             value="25"
             class="form-control"
           />
-          <span class="material-icons edit"> tune </span>
+          <span class="edit">izmeni</span>
         </div>
-        <span class="min">minutes</span>
+        <span class="min">minuta</span>
       </div>
       <div class="form-group">
-        <label for="sessions-num">Break duration</label>
+        <label for="sessions-num">Dužina pauze</label>
         <div class="input">
           <input
             type="number"
@@ -54,22 +63,30 @@
             step="1"
             min="1"
             max="99"
-            value="05"
+            value="5"
             class="form-control"
           />
-          <span class="material-icons edit"> tune </span>
+          <span class="edit">izmeni</span>
         </div>
-        <span class="min">minutes</span>
+        <span class="min">minuta</span>
       </div>
-    </form>
-    <button id="start">Start</button>
-    <div class="current">
-      <div id="status">5/8</div>
-      <div id="timer">12:54</div>
-      <small id="type">Pomodoro</small>
-      <div>
-        <button id="pause">Pause</button>
-        <button id="reset">Reset</button>
+    </div>
+    <div class="main">
+      <button id="start">
+        <span>Počni</span>
+        <span class="material-icons"> play_arrow </span>
+      </button>
+      <div id="end">
+        KRAJ
+      </div>
+      <div id="current">
+        <div id="status">5/8</div>
+        <div id="timer">12:54</div>
+        <small id="type">Pomodoro</small>
+        <div class="buttons">
+          <button id="pause">Pauziraj</button>
+          <button id="reset">Resetuj</button>
+        </div>
       </div>
     </div>
   </body>

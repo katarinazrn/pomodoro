@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap");
+
 $bg: rgb(197, 81, 68);
 $text-light: rgb(250, 244, 244);
 $dark-red: rgb(116, 5, 5);
@@ -11,32 +13,88 @@ body {
 
   * {
     color: $text-light;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    letter-spacing: 1px;
+    font-family: "Pragati Narrow", sans-serif; //    letter-spacing: 1px;
     font-size: 20px;
+  }
+
+  #info {
+    width: fit-content;
+    margin-left: auto;
+    right: 0;
+    padding: 10px;
+    opacity: 0.6;
+    text-decoration: none;
+    position: absolute;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .config {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
 
     .form-group {
       display: flex;
       flex-direction: column;
       margin: 5px;
-      padding: 20px;
+      margin-top: 60px;
+      padding: 10px;
+      width: 100px;
+      text-align: center;
       border-radius: 10px;
+      background-color: darken($bg, 6%);
 
-      background-color: darken($bg, 5%);
+      @media (max-width: 600px) {
+        height: 140px;
+        padding: 0;
+        justify-content: space-evenly;
+        background-color: transparent;
+      }
+
+      label {
+        font-size: 18px;
+        
+        @media (max-width: 600px) {
+          font-size: 14px;
+          width: 40px;
+          margin: 0 auto;
+        }
+      }
 
       .min {
         text-align: center;
+        @media (max-width: 600px) {
+          font-size: 14px;
+        }
       }
 
       .input {
         width: 50px;
         margin: 0 auto;
+        display: block;
+        position: relative;
+
+        &.hover {
+          .edit {
+            visibility: visible;
+          }
+
+          input {
+            opacity: 0.3;
+          }
+        }
+
+        .edit {
+          visibility: hidden;
+          position: absolute;
+          font-size: 18px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $text-light;
+        }
 
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
@@ -49,88 +107,191 @@ body {
           outline: none;
           border: none;
           background-color: transparent;
-          padding-top: 7px;
           font-size: 36px;
-        }
+          margin: 0 auto;
+          width: 50px;
+          padding: 0;
+          text-align: center;
 
-        position: relative;
-
-        &:hover {
-          .edit {
-            display: block;
+          @media (max-width: 600px) {
+            font-weight: bold;
+            font-size: 22px;
+            height: fit-content;
           }
-        }
-        .edit {
-          display: none;
-          top: 0;
-          right: 0;
-          position: absolute;
-          font-size: 20px;
-          color: darken($text-light, 19%);
         }
       }
     }
   }
 
-  #start {
-    cursor: pointer;
-    margin: 20px auto;
-    background-color: transparent;
-    font-size: 40px;
-    padding: 20px 40px;
-    border: none;
-    display: block;
-
-    &:hover {
-      opacity: 0.6;
-    }
-  }
-
-  .current {
-    margin: 0 auto;
+  .main {
     display: flex;
     flex-direction: column;
 
-    width: fit-content;
-    justify-content: center;
-    text-align: center;
-
-    #status {
-      font-size: 50px;
-    }
-
-    #timer {
-        box-sizing: border-box;
-      font-size: 80px;
-      padding: 30px;
-      border: 6px solid $text-light;
-      border-radius: 70px;
-      margin: 10px;
-      background-color: darken($bg, 5%);
-    }
-
-    button {
-      padding: 5px 10px;
-      font-weight: bold;
-      border: none;
-      outline: none;
+    #start {
       cursor: pointer;
+      margin: 120px auto;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
 
-      margin-top: 10px;
-      border-radius: 5px;
-
-      &:hover{
-          filter: brightness(1.4);
+      @media (max-width: 600px) {
+        margin: 20px auto;
       }
 
-      &#pause {
-        background-color: $accent1;
-        color: darken($accent1, 40%);
+      span {
+        font-size: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
-      &#reset {
-        background-color: $accent2;
-        color: darken($accent2, 40%);
+      &:hover {
+        opacity: 0.6;
       }
     }
+
+    #end {
+      margin: 140px auto;
+      background-color: transparent;
+      border: none;
+      display: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 80px;
+
+      @media (max-width: 600px) {
+        font-size: 40px;
+      }
+
+      animation-name: blink;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+
+      @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+
+    #current {
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-name: show-from-left;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      display: none;
+      margin: 0 auto;
+      flex-direction: column;
+      margin-top: 10px;
+      width: fit-content;
+      justify-content: center;
+      text-align: center;
+
+      #status {
+        font-size: 40px;
+
+        @media (max-width: 600px) {
+          font-size: 22px;
+        }
+      }
+
+      #timer {
+        box-sizing: content-box;
+        font-size: 60px;
+        padding: 10px 40px;
+        border: 3px solid $text-light;
+        border-radius: 100px;
+        margin: 10px;
+        background-color: darken($bg, 5%);
+
+        @media (max-width: 600px) {
+          font-size: 34px;
+        }
+      }
+
+      
+      .buttons {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        
+        @media (max-width: 600px) {
+          
+        }
+
+        button {
+          display: block;
+          padding: 5px 10px;
+          font-weight: bold;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          margin: 10px;
+          border-radius: 5px;
+          @media (max-width: 600px) {
+            font-size: 18px;
+            padding: 3px 12px;
+          }
+
+          &:hover {
+            filter: brightness(1.4);
+          }
+
+          &#pause {
+            background-color: $accent1;
+            color: darken($accent1, 40%);
+          }
+          &#reset {
+            background-color: $accent2;
+            color: darken($accent2, 40%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.move-right {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-name: hide-right;
+}
+
+@keyframes hide-right {
+  0% {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes show-from-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 1;
+    display: flex;
   }
 }

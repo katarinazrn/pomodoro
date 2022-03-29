@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap");
 body {
   margin: 0;
   background-color: #c55144;
@@ -6,9 +7,24 @@ body {
 
 body * {
   color: #faf4f4;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  letter-spacing: 1px;
+  font-family: "Pragati Narrow", sans-serif;
   font-size: 20px;
+}
+
+body #info {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  right: 0;
+  padding: 10px;
+  opacity: 0.6;
+  text-decoration: none;
+  position: absolute;
+}
+
+body #info:hover {
+  opacity: 1;
 }
 
 body .config {
@@ -18,7 +34,6 @@ body .config {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto;
 }
 
 body .config .form-group {
@@ -30,19 +45,71 @@ body .config .form-group {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 5px;
-  padding: 20px;
+  margin-top: 60px;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
   border-radius: 10px;
-  background-color: #b74539;
+  background-color: #b34437;
+}
+
+@media (max-width: 600px) {
+  body .config .form-group {
+    height: 140px;
+    padding: 0;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: transparent;
+  }
+}
+
+body .config .form-group label {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  body .config .form-group label {
+    font-size: 14px;
+    width: 40px;
+    margin: 0 auto;
+  }
 }
 
 body .config .form-group .min {
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  body .config .form-group .min {
+    font-size: 14px;
+  }
+}
+
 body .config .form-group .input {
   width: 50px;
   margin: 0 auto;
+  display: block;
   position: relative;
+}
+
+body .config .form-group .input.hover .edit {
+  visibility: visible;
+}
+
+body .config .form-group .input.hover input {
+  opacity: 0.3;
+}
+
+body .config .form-group .input .edit {
+  visibility: hidden;
+  position: absolute;
+  font-size: 18px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #faf4f4;
 }
 
 body .config .form-group .input input::-webkit-outer-spin-button,
@@ -56,39 +123,24 @@ body .config .form-group .input input {
   outline: none;
   border: none;
   background-color: transparent;
-  padding-top: 7px;
   font-size: 36px;
-}
-
-body .config .form-group .input:hover .edit {
-  display: block;
-}
-
-body .config .form-group .input .edit {
-  display: none;
-  top: 0;
-  right: 0;
-  position: absolute;
-  font-size: 20px;
-  color: #dcb1b1;
-}
-
-body #start {
-  cursor: pointer;
-  margin: 20px auto;
-  background-color: transparent;
-  font-size: 40px;
-  padding: 20px 40px;
-  border: none;
-  display: block;
-}
-
-body #start:hover {
-  opacity: 0.6;
-}
-
-body .current {
   margin: 0 auto;
+  width: 50px;
+  padding: 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  body .config .form-group .input input {
+    font-weight: bold;
+    font-size: 22px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
+body .main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,6 +148,116 @@ body .current {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+body .main #start {
+  cursor: pointer;
+  margin: 120px auto;
+  background-color: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+  body .main #start {
+    margin: 20px auto;
+  }
+}
+
+body .main #start span {
+  font-size: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .main #start:hover {
+  opacity: 0.6;
+}
+
+body .main #end {
+  margin: 140px auto;
+  background-color: transparent;
+  border: none;
+  display: none;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 80px;
+  -webkit-animation-name: blink;
+          animation-name: blink;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@media (max-width: 600px) {
+  body .main #end {
+    font-size: 40px;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body .main #current {
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-name: show-from-left;
+          animation-name: show-from-left;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: none;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -105,43 +267,143 @@ body .current {
   text-align: center;
 }
 
-body .current #status {
-  font-size: 50px;
+body .main #current #status {
+  font-size: 40px;
 }
 
-body .current #timer {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 80px;
-  padding: 30px;
-  border: 6px solid #faf4f4;
-  border-radius: 70px;
+@media (max-width: 600px) {
+  body .main #current #status {
+    font-size: 22px;
+  }
+}
+
+body .main #current #timer {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-size: 60px;
+  padding: 10px 40px;
+  border: 3px solid #faf4f4;
+  border-radius: 100px;
   margin: 10px;
   background-color: #b74539;
 }
 
-body .current button {
+@media (max-width: 600px) {
+  body .main #current #timer {
+    font-size: 34px;
+  }
+}
+
+body .main #current .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+}
+
+body .main #current .buttons button {
+  display: block;
   padding: 5px 10px;
   font-weight: bold;
   border: none;
   outline: none;
   cursor: pointer;
-  margin-top: 10px;
+  margin: 10px;
   border-radius: 5px;
 }
 
-body .current button:hover {
+@media (max-width: 600px) {
+  body .main #current .buttons button {
+    font-size: 18px;
+    padding: 3px 12px;
+  }
+}
+
+body .main #current .buttons button:hover {
   -webkit-filter: brightness(1.4);
           filter: brightness(1.4);
 }
 
-body .current button#pause {
+body .main #current .buttons button#pause {
   background-color: #26a8f3;
   color: #043049;
 }
 
-body .current button#reset {
+body .main #current .buttons button#reset {
   background-color: #ffb62d;
   color: #603f00;
+}
+
+.move-right {
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-name: hide-right;
+          animation-name: hide-right;
+}
+
+@-webkit-keyframes hide-right {
+  0% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes hide-right {
+  0% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes show-from-left {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 1;
+    display: -webkit-box;
+    display: flex;
+  }
+}
+
+@keyframes show-from-left {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 /*# sourceMappingURL=style.css.map */
