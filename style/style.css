@@ -91,6 +91,7 @@ body .config .form-group label {
 
 body .config .form-group .min {
   text-align: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
