@@ -5,6 +5,20 @@ body {
   overflow-x: hidden;
 }
 
+body header {
+  width: 380px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: baseline;
+}
+
+body header img {
+  height: 60px;
+  padding: 10px;
+}
+
 body * {
   color: #faf4f4;
   font-family: "Pragati Narrow", sans-serif;
@@ -44,8 +58,8 @@ body .config .form-group {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 5px;
-  margin-top: 60px;
+  margin: 16px;
+  margin-top: 30px;
   padding: 10px;
   width: 100px;
   text-align: center;
@@ -151,7 +165,7 @@ body .main {
 
 body .main #start {
   cursor: pointer;
-  margin: 120px auto;
+  margin: 100px auto;
   background-color: transparent;
   border: none;
   display: -webkit-box;
@@ -189,7 +203,7 @@ body .main #start:hover {
 }
 
 body .main #end {
-  margin: 140px auto;
+  margin: 100px auto;
   background-color: transparent;
   border: none;
   display: none;
@@ -257,7 +271,7 @@ body .main #current {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 10px;
+  margin-top: 5px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -268,7 +282,7 @@ body .main #current {
 }
 
 body .main #current #status {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 @media (max-width: 600px) {
@@ -305,6 +319,7 @@ body .main #current .buttons {
 }
 
 body .main #current .buttons button {
+  font-size: 16px;
   display: block;
   padding: 5px 10px;
   font-weight: bold;
@@ -317,7 +332,6 @@ body .main #current .buttons button {
 
 @media (max-width: 600px) {
   body .main #current .buttons button {
-    font-size: 18px;
     padding: 3px 12px;
   }
 }
