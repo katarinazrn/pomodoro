@@ -26,14 +26,24 @@ let seconds;
 
 let current_status = null;
 
+let notification_audio = new Audio("./mixkit-fairy-bells-583.wav");
+let sound_enabled = true;
+let sound_button = document.getElementById("sound");
+
+sound_button.addEventListener("click", () => {
+  sound_enabled = !sound_enabled;
+  sound_enabled
+    ? (sound_button.innerHTML = "notifications_active")
+    : (sound_button.innerHTML ="notifications_off");
+});
+
 start_button.addEventListener("click", () => {
   init();
   timer = getInterval();
-  
+
   setTimeout(() => {
-    start_button.style.display='none';
+    start_button.style.display = "none";
   }, 800);
-  
 });
 
 pause_button.addEventListener("click", () => {
@@ -57,10 +67,9 @@ reset_button.addEventListener("click", () => {
 
   clearInterval(timer);
   current.style.display = "none";
-  start_button.classList.remove('move-right');
+  start_button.classList.remove("move-right");
   start_button.style.display = "flex";
   end.style.display = "none";
-
 });
 
 for (const element of inputElements) {
@@ -91,6 +100,8 @@ function getInterval() {
       minutes -= 1;
 
       if (minutes < 0) {
+        sound_enabled && notification_audio.play();
+
         seconds = 0;
         if (current_status == "pomodoro") {
           current_status = "break";
@@ -109,6 +120,7 @@ function getInterval() {
           current_session_number > num_sessions ||
           (current_status === "break" && current_session_number == num_sessions)
         ) {
+          //kraj
           clearInterval(timer);
           end.style.display = "flex";
           timer_element.style.display = "none";
@@ -122,14 +134,12 @@ function getInterval() {
   }, 1000);
 }
 
-
-
 function init() {
-  start_button.classList.add('move-right');
+  start_button.classList.add("move-right");
   timer_element.style.display = "block";
   pause_button.style.display = "block";
   type.style.display = "block";
-  type.innerHTML='Pomodoro';
+  type.innerHTML = "Pomodoro";
   pause_button.innerHTML = "Pauziraj";
   current.style.display = "flex";
 

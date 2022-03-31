@@ -25,19 +25,28 @@ body * {
   font-size: 20px;
 }
 
-body #info {
+body .info {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
   right: 0;
   padding: 10px;
-  opacity: 0.6;
-  text-decoration: none;
   position: absolute;
 }
 
-body #info:hover {
+body .info a,
+body .info button {
+  text-decoration: none;
+  opacity: 0.6;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+body .info a:hover,
+body .info button:hover {
   opacity: 1;
 }
 

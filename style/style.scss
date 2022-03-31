@@ -11,13 +11,13 @@ body {
   background-color: $bg;
   overflow-x: hidden;
 
-  header{
+  header {
     width: 380px;
     margin: 0 auto;
     display: flex;
     vertical-align: baseline;
-    
-    img{
+
+    img {
       height: 60px;
       padding: 10px;
     }
@@ -29,17 +29,25 @@ body {
     font-size: 20px;
   }
 
-  #info {
+  .info {
     width: fit-content;
     margin-left: auto;
     right: 0;
     padding: 10px;
-    opacity: 0.6;
-    text-decoration: none;
+
     position: absolute;
 
-    &:hover {
-      opacity: 1;
+    a,
+    button {
+      text-decoration: none;
+      opacity: 0.6;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background-color: transparent;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
@@ -67,7 +75,7 @@ body {
 
       label {
         font-size: 18px;
-        
+
         @media (max-width: 600px) {
           width: 40px;
           margin: 0 auto;
@@ -76,7 +84,7 @@ body {
 
       .min {
         text-align: center;
-        margin:  0 auto;
+        margin: 0 auto;
         @media (max-width: 600px) {
           font-size: 20px;
         }
@@ -216,7 +224,6 @@ body {
 
       #status {
         font-size: 30px;
-
       }
 
       #timer {
@@ -227,14 +234,13 @@ body {
         border-radius: 100px;
         margin: 10px;
         background-color: darken($bg, 5%);
-
       }
-      
+
       .buttons {
         display: flex;
         justify-content: center;
         padding: 10px;
-        
+
         button {
           font-size: 16px;
           display: block;
@@ -245,7 +251,6 @@ body {
           cursor: pointer;
           margin: 10px;
           border-radius: 5px;
-         
 
           &:hover {
             filter: brightness(1.4);
