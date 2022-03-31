@@ -285,12 +285,6 @@ body .main #current #status {
   font-size: 30px;
 }
 
-@media (max-width: 600px) {
-  body .main #current #status {
-    font-size: 22px;
-  }
-}
-
 body .main #current #timer {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -300,12 +294,6 @@ body .main #current #timer {
   border-radius: 100px;
   margin: 10px;
   background-color: #b74539;
-}
-
-@media (max-width: 600px) {
-  body .main #current #timer {
-    font-size: 34px;
-  }
 }
 
 body .main #current .buttons {
@@ -328,12 +316,6 @@ body .main #current .buttons button {
   cursor: pointer;
   margin: 10px;
   border-radius: 5px;
-}
-
-@media (max-width: 600px) {
-  body .main #current .buttons button {
-    padding: 3px 12px;
-  }
 }
 
 body .main #current .buttons button:hover {

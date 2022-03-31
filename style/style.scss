@@ -216,9 +216,6 @@ body {
       #status {
         font-size: 30px;
 
-        @media (max-width: 600px) {
-          font-size: 22px;
-        }
       }
 
       #timer {
@@ -230,21 +227,13 @@ body {
         margin: 10px;
         background-color: darken($bg, 5%);
 
-        @media (max-width: 600px) {
-          font-size: 34px;
-        }
       }
-
       
       .buttons {
         display: flex;
         justify-content: center;
         padding: 10px;
         
-        @media (max-width: 600px) {
-          
-        }
-
         button {
           font-size: 16px;
           display: block;
@@ -255,9 +244,7 @@ body {
           cursor: pointer;
           margin: 10px;
           border-radius: 5px;
-          @media (max-width: 600px) {
-            padding: 3px 12px;
-          }
+         
 
           &:hover {
             filter: brightness(1.4);
